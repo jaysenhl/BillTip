@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Who will Pay?</title>
+</head>
+<body>
+    <div class="container text-center">
+
+        <div>
+            <h1>Tip Calculator</h1>
+            <lottie-player class="lottie" src="https://assets9.lottiefiles.com/packages/lf20_k0qv8hhf.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+            <h1 class="text-center mb-4">Bill Details</h1>
+            <div class="text-info">
+                <p><i class="fas fa-asterisk fa-spin"></i> Going out to eat with family and/or friends?</p>
+                <p><i class="fas fa-asterisk fa-spin"></i> Want to calculate the tip?</p>
+                <p><i class="fas fa-asterisk fa-spin"></i> Want to divide the bill between the group?</p>
+                <p><i class="fas fa-asterisk fa-spin"></i> Want to choose a random person to pay the bill completely?</p>
+            </div>
+            <h3 class="mt-4 mb-4"><strong class="text-success">Start Here</strong></h3>
+            <label for="" class="form-label">Add Total:</label>
+            <input type="number" id="totalSinTipInp" class="form-control-sm shadow">
+        </div>
+        <div>
+            <label for="" class="form-label">Add tip %</label>
+            <input type="number" id="totalTipInp" class="form-control-sm shadow">
+        </div>
+        <div class="mt-3">
+            <button onclick="Calculate()" class="btn btn-success">Calculate <i class="fas fa-calculator shadow"></i></button>
+            <button onclick="Clear()" class="btn btn-warning">Clear <i class="fas fa-trash shadow"></i></button>
+        </div>
+        <h2 id="totalTipEl" class="mt-4 text-info"></h2>
+        <h2 id="totalFinalEl" class="text-info"></h2>
+
+        <!-------------------------------DIVIDE BILL BETWEEN GROUP----------------------------------->
+        <div class="text-center">
+            <h1>Divide Bill Between Group</h1>
+            <label for="" class="form-label">How many in group</label>
+            <input type="number" class="form-control-sm shadow" id="howManyEl">
+            <button onclick="Divide()" class="btn btn-success mb-4 mt-3">Calculate <i class="fas fa-calculator shadow"></i></button>
+            <button onclick="ClearGroup()" class="btn btn-warning mb-4 mt-3">Clear <i class="fas fa-trash shadow"></i></button>
+            <h2 id="eachPaysEl" class="text-info"></h2>
+        </div>
+
+        <!-------------------------------WHO WILL PAY THE BILL--------------------------------------->
+        <h1 class="mt-3 ">Who will pay the bill?</h1>
+        <p class="text-info"><i class="fas fa-asterisk fa-spin"></i> Add names and click choose random person</p>
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_31qjojxe.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+
+        <label for="" class="form-label">Person Name</label>
+        <input type="text" id="textEl" class="form-control-sm shadow">
+        <div class="mb-4 mt-3">
+            <button onclick="Add()" class="btn btn-info"><i class="fas fa-user-plus"></i> Add</button>
+            <button onclick="Remove()" class="btn btn-danger"><i class="fas fa-user-minus"> Remove</i></button>
+        </div>
+        <!-- <button onclick="Show()">Show Total</button> -->
+        <ul></ul>
+        <!-- <h2 id="total">Total: </h2> -->
+        <button class="btn btn-warning" onclick="Choose()">Choose Random Person</button>
+        <h1 id="personToPay" class="mt-2 mb-5">Person who will pay is: </h1>
+    </div>
+
+    <div class="footer">
+        <p>with 💓 by <i class="fas fa-atom fa-spin"></i> Jaysen 👨‍💻PRogBor 🇵🇷-2021 </p>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
